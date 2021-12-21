@@ -11,12 +11,22 @@
 	<groupId>com.example</groupId>
 	<artifactId>githubrepo</artifactId>
 	<version>0.0.1</version>
+	<url>https://github.com/pushpendra2520/gitnewrepo.git</url>
+	 <scm>
+        <url>>https://github.com/pushpendra2520/gitnewrepo.git</url>
+        <connection>scm:git:git@github.com:pushpendra2520/gitnewrepo.git</connection>
+        <developerConnection>scm:git:git@github.com:pushpendra2520/gitnewrepo.git</developerConnection>
+    </scm>
+    
 	<packaging>war</packaging>
 	<name>githubrepo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 		 <github.global.server>github</github.global.server>
+		   <github.global.server>github</github.global.server>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -38,6 +48,19 @@
 
 	<build>
 		<plugins>
+		  <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -84,4 +107,14 @@
         <url>file://${project.build.directory}/mvn-repo</url>
     </repository>
 </distributionManagement>
+ <repositories>
+        <repository>
+            <id>PROJECT-REPO-URL</id>
+            <url>https://github.com/pushpendra2520/gitnewrepo</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
